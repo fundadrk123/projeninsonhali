@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Çizim Uygulaması</title>
+</head>
+
+
+<body>
+
+    <div class="canvas-container">
+        <canvas id="canvas" width="600" height="600"></canvas>
+    </div>
+
+    <div class="tools-container">
+        <label id="klmrngi" for="renkSec">Kalem Rengi</label>
+        <input type="color" id="renkSec" onchange="renkDegistir(this.value)">
+
+        <label id="klmbytu" for="boyutSec">Kalem Boyutu</label>
+        <input id="byt" type="range" id="boyutSec" min="1" max="20" onchange="boyutDegistir(this.value)" value="1">
+
+        <input type="text" id="metin" placeholder="Metin Girin">
+        <button id="yaz" onclick="metinEkle()">Metin Ekle</button>
+    </div>
+    <div class="button-group">
+        <button id="fosforluKalem" onclick="fosforluKalem('rgba(255,255,0,)')">Fosforlu Kalem</button>
+        <button onclick="fosforluKalemRengiSec('rgba(255, 0, 0, 0.5)')">Kırmızı</button>
+        <button onclick="fosforluKalemRengiSec('rgba(0, 255, 0, 0.5)')">Yeşil</button>
+        <button onclick="fosforluKalemRengiSec('rgba(0, 0, 255, 0.5)')">Mavi</button>
+        <button onclick="fosforluKalemRengiSec('rgba(255,255,0,1)')">Sarı</button>
+        <button onclick="fosforluKalemRengiSec('rgba(255, 165, 0)')">Turuncu</button>
+        <button onclick="fosforluKalemRengiSec('rgba(207, 76, 150)')">Mor</button>
+        <button onclick="geriAl()">Geri</button>
+        <button onclick="ileriAl()">İleri</button>
+
+        <button id="dzcgi" onclick="cizgiCiz()">Düz Çizgi</button>
+        <button id="kreciz" onclick="kareCiz()">Kare</button>
+        <button id="dkdrgncz" onclick="dikdortgenCiz()">Dikdörtgen</button>
+        <button id="direcz" onclick="daireCiz()">Daire</button>
+        <button id="tmz" onclick="temizle()">Sil</button>
+    </div>
+
+    <script src="fabric.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
